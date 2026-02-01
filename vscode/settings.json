@@ -17,5 +17,16 @@
         "plaintext": false,
         "markdown": true,
         "scminput": false
+    },
+    "explorer.confirmDelete": false,
+    "redhat.telemetry.enabled": false,
+    "makefile.configureOnOpen": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
