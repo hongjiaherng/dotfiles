@@ -84,7 +84,7 @@
                 "name": "PowerShell",
                 "opacity": 85,
                 "scrollbarState": "visible",
-                "startingDirectory": "D:\\jherng",
+                "startingDirectory": "%USERPROFILE%",
                 "useAcrylic": true
             },
             {
@@ -98,7 +98,7 @@
                 "name": "Windows PowerShell",
                 "opacity": 85,
                 "scrollbarState": "hidden",
-                "startingDirectory": "D:\\jherng",
+                "startingDirectory": "%USERPROFILE%",
                 "useAcrylic": true
             },
             {
@@ -109,7 +109,7 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt",
-                "startingDirectory": "D:\\jherng"
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
