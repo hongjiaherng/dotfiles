@@ -1,12 +1,10 @@
 {
     "window.commandCenter": true,
-    "workbench.colorTheme": "Panda Syntax",
-    "editor.fontSize": 13,
     "editor.fontFamily": "JetBrains Mono, 'Courier New', monospace",
     "terminal.integrated.fontLigatures.enabled": true,
     "editor.fontLigatures": true,
     "workbench.sideBar.location": "right",
-    "workbench.iconTheme": "catppuccin-latte",
+    "workbench.iconTheme": "catppuccin-mocha",
     "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
@@ -28,5 +26,37 @@
     "gitlens.ai.vscode.model": "copilot:gpt-4.1",
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "[latex]": {
+        "editor.defaultFormatter": "mathematic.vscode-latex"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.autoSave": "afterDelay",
+    "files.associations": {
+        "*.mdx": "markdown"
+    },
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor"
+    },
+    "discord.removeDetails": true,
+    "discord.removeLowerDetails": true,
+    "rust-analyzer.cachePriming.enable": false,
+    "gitlens.launchpad.indicator.enabled": false,
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "https://www.plantuml.com/plantuml",
+    "claudeCode.preferredLocation": "panel",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "markdown.preview.fontSize": 16,
+    "markdown-preview-github-styles.colorTheme": "light",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.fontSize": 15,
+    "workbench.colorTheme": "One Dark Pro Night Flat",
+    "python.analysis.typeCheckingMode": "standard",
+    "search.useGlobalIgnoreFiles": true
+
 }

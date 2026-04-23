@@ -12,3 +12,7 @@ $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
+
+# Notebook support for Zed
+$env:LOCAL_NOTEBOOK_DEV = 1
+
