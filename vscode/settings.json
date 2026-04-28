@@ -57,6 +57,23 @@
     "editor.fontSize": 15,
     "workbench.colorTheme": "One Dark Pro Night Flat",
     "python.analysis.typeCheckingMode": "standard",
-    "search.useGlobalIgnoreFiles": true
-
+    "search.useGlobalIgnoreFiles": true,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-p>"
+            ],
+            "commands": [
+                "workbench.action.quickOpen",
+            ]
+        },
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
