@@ -16,3 +16,5 @@ if (Test-Path($ChocolateyProfile)) {
 # Notebook support for Zed
 $env:LOCAL_NOTEBOOK_DEV = 1
 
+(& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
+(& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
