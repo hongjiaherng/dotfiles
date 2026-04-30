@@ -8,19 +8,19 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "terminal": {
-    "font_family": "MesloLGL Nerd Font Mono"
+    "font_family": "JetBrains Mono",
   },
   "agent_servers": {
     "claude-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "edit_predictions": {
     "mode": "eager",
     "copilot": {
-      "enable_next_edit_suggestions": true
+      "enable_next_edit_suggestions": true,
     },
-    "provider": "copilot"
+    "provider": "copilot",
   },
   "cli_default_open_behavior": "new_window",
   "icon_theme": "Colored Zed Icons Theme Dark",
@@ -31,7 +31,7 @@
     "dock": "left",
   },
   "agent": {
-    "dock": "right",
+    "dock": "left",
     "favorite_models": [],
     "model_parameters": [],
   },
@@ -57,11 +57,12 @@
   "languages": {
     "Python": {
       "language_servers": [
-        // Enable ty, disable basedpyright, and enable all
-        // other registered language servers (ruff, pylsp, pyright).
+        // Enable ty, ruff, disable basedpyright, pylsp, pyright
         "ty",
+        "ruff",
         "!basedpyright",
-        "...",
+        "!pylsp",
+        "!pyright",
       ],
       "code_actions_on_format": {
         "source.organizeImports.ruff": true,
@@ -72,5 +73,9 @@
         },
       },
     },
+  },
+  "feature_flags": {
+    "notebooks": "on",
+    "tabular-data-preview": "on",
   },
 }
