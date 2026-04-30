@@ -6,7 +6,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "folder_name_fallback": false,
             "home_enabled": true
@@ -17,7 +17,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "@{{ .UserName }} ",
@@ -26,7 +26,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "➜",
@@ -35,8 +35,7 @@
           "style": "plain"
         },
         {
-          "properties": {
-            "cache_duration": "none",
+          "options": {
             "style": "folder"
           },
           "template": " {{ .Path }}",
@@ -45,9 +44,8 @@
           "style": "plain"
         },
         {
-          "properties": {
-            "branch_icon": "",
-            "cache_duration": "none"
+          "options": {
+            "branch_icon": ""
           },
           "template": " <#DDB15F>git(</>{{ .HEAD }}<#DDB15F>)</>",
           "foreground": "#D4AAFC",
@@ -55,18 +53,14 @@
           "style": "plain"
         },
         {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "template": " \uf119",
+          "template": " :(",
           "foreground": "#DCB977",
-          "type": "exit",
+          "type": "status",
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "always_enabled": true,
-            "cache_duration": "none",
             "style": "austin",
             "threshold": 1000
           },
@@ -82,7 +76,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "➜ ",
