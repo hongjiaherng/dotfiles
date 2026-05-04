@@ -14,6 +14,7 @@ Single source of truth for Windows configs. Consumer locations are symlinks back
 | `zed\settings.json` | `$env:APPDATA\Zed\settings.json` |
 | `zed\themes` | `$env:APPDATA\Zed\themes` |
 | `nvim` | `$env:LOCALAPPDATA\nvim` |
+| `rainmeter\ObsidianDaily` | `$HOME\Documents\Rainmeter\Skins\ObsidianDaily` |
 
 WT path is for the Store stable build. Preview: `Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe`. Unpackaged: `$env:LOCALAPPDATA\Microsoft\Windows Terminal\settings.json`.
 
@@ -46,6 +47,7 @@ Link-Config "$repo\cursor\settings.json" "$env:APPDATA\Cursor\User\settings.json
 Link-Config "$repo\zed\settings.json" "$env:APPDATA\Zed\settings.json"
 Link-Config "$repo\zed\themes" "$env:APPDATA\Zed\themes"
 Link-Config "$repo\nvim" "$env:LOCALAPPDATA\nvim"
+Link-Config "$repo\rainmeter\ObsidianDaily" "$HOME\Documents\Rainmeter\Skins\ObsidianDaily"
 ```
 
 Verify: `Get-Item <path> | Select LinkType, Target`.

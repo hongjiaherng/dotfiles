@@ -18,3 +18,5 @@ $env:LOCAL_NOTEBOOK_DEV = 1
 
 (& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
 (& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
+
+function todos { zed 'C:\Users\jherng\Documents\Obsidian Vault\TODOs' }

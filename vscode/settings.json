@@ -32,7 +32,6 @@
         "editor.defaultFormatter": "mathematic.vscode-latex"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "files.autoSave": "afterDelay",
     "files.associations": {
         "*.mdx": "markdown"
     },
