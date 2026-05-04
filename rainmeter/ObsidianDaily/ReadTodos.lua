@@ -1,6 +1,18 @@
 local CHARS_PER_LINE = 36   -- approx for Segoe UI 10pt in ~245px width
 local PX_PER_LINE    = 22
 
+local function urlencode(s)
+    return (s:gsub("([^%w%-_%.~])", function(c)
+        return string.format("%%%02X", string.byte(c))
+    end))
+end
+
+local function expandEnv(s)
+    return (s:gsub("%%([%w_]+)%%", function(name)
+        return os.getenv(name) or ("%" .. name .. "%")
+    end))
+end
+
 function Initialize()
 end
 
@@ -13,14 +25,18 @@ function Update()
     local month = string.format("%02d", date.month)
     local day   = string.format("%02d", date.day)
 
+    -- resolve vault path from skin variable; expand %ENV% and normalise slashes
+    local vaultRaw = SKIN:GetVariable("VaultPath", "%USERPROFILE%\\Documents\\Obsidian Vault")
+    local vault    = expandEnv(vaultRaw):gsub("/", "\\"):gsub("\\+$", "")
+    local vaultName = vault:match("([^\\]+)$") or "Obsidian Vault"
+
     local datestr     = os.date("%A, %d.%m.%Y", now)
     local journalPath = string.format("Personal/Journal/%d/%s/%d-%s-%s", year, month, year, month, day)
-    SKIN:Bang('!SetVariable', 'DateString',  datestr)
-    SKIN:Bang('!SetVariable', 'JournalPath', journalPath)
+    SKIN:Bang('!SetVariable', 'DateString',     datestr)
+    SKIN:Bang('!SetVariable', 'JournalPath',    journalPath)
+    SKIN:Bang('!SetVariable', 'VaultNameUrl',   urlencode(vaultName))
 
-    local home  = os.getenv("USERPROFILE") or "C:\\Users\\jherng"
-    local vault = home .. "\\Documents\\Obsidian Vault"
-    local path  = string.format(
+    local path = string.format(
         "%s\\Personal\\Journal\\%d\\%s\\%d-%s-%s.md",
         vault, year, month, year, month, day
     )
