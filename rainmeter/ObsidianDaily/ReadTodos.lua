@@ -26,9 +26,9 @@ function Update()
     local day   = string.format("%02d", date.day)
 
     -- resolve vault path from skin variable; expand %ENV% and normalise slashes
-    local vaultRaw = SKIN:GetVariable("VaultPath", "%USERPROFILE%\\Documents\\Obsidian Vault")
+    local vaultRaw = SKIN:GetVariable("VaultPath", "%USERPROFILE%\\Documents\\Obsidian\\Daily Vault")
     local vault    = expandEnv(vaultRaw):gsub("/", "\\"):gsub("\\+$", "")
-    local vaultName = vault:match("([^\\]+)$") or "Obsidian Vault"
+    local vaultName = vault:match("([^\\]+)$") or "Daily Vault"
 
     local datestr     = os.date("%A, %d.%m.%Y", now)
     local journalPath = string.format("Personal/Journal/%d/%s/%d-%s-%s", year, month, year, month, day)
