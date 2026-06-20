@@ -74,5 +74,42 @@
     ],
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    },
+    "remote.SSH.remotePlatform": {
+        "194.68.245.152": "linux",
+        "213.173.105.23": "linux",
+        "195.26.233.80": "linux"
+    },
+    "git.blame.editorDecoration.enabled": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "files.autoSave": "afterDelay",
+    "jupyter.askForKernelRestart": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.gotoLine",
+        "-workbench.action.terminal.goToRecentDirectory"
+    ],
+    "json.schemaDownload.trustedDomains": {
+        "https://developer.microsoft.com/json-schemas/": true,
+        "https://json-schema.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://raw.githubusercontent.com/devcontainers/spec/": true,
+        "https://raw.githubusercontent.com/microsoft/vscode/": true,
+        "https://schemastore.azurewebsites.net/": true,
+        "https://ui.shadcn.com": true,
+        "https://www.schemastore.org/": true
+    },
+    "terminal.integrated.gpuAcceleration": "off",
+    "terminal.integrated.mouseWheelScrollSensitivity": 3,
+    "security.promptForLocalFileProtocolHandling": false,
+    "chat.fontFamily": "Segoe UI",
+    "chat.fontSize": 16,
+    "vscord.status.details.text.debugging": "Debugging",
+    "vscord.status.state.text.editing": "Working on ?{file_extension}",
+    "vscord.status.state.text.viewing": "Viewing ?{file_extension}",
+    "vscord.status.problems.text": "",
+    "vscord.status.problems.enabled": false,
+    "vscord.status.details.text.editing": "In {LANG}",
+    "vscord.status.details.text.viewing": "In {LANG}",
+    "vscord.status.state.text.debugging": "Debugging: {LANG}",
+    "workbench.statusBar.visible": false
 }

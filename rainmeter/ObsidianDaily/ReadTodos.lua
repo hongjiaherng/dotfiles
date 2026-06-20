@@ -47,16 +47,18 @@ function Update()
         return "  No journal file."
     end
 
-    local pending = {}
-    local done    = {}
+    local pending     = {}
+    local in_progress = {}
+    local done        = {}
 
     for line in file:lines() do
-        local is_done    = line:match("^%- %[x%]")
-        local is_pending = line:match("^%- %[ %]")
+        local is_done       = line:match("^%- %[x%]")
+        local is_pending    = line:match("^%- %[ %]")
+        local is_inprogress = line:match("^%- %[/%]")
 
-        if is_done or is_pending then
+        if is_done or is_pending or is_inprogress then
             local clean = line
-                :gsub("^%- %[[x ]%]%s*", "")
+                :gsub("^%- %[[x /]%]%s*", "")
                 :gsub("%b[]", "")
                 :gsub("`[^`]*`", "")
                 :gsub("%b()", "")
@@ -68,9 +70,11 @@ function Update()
 
             if #clean > 0 then
                 if is_done then
-                    table.insert(done,    "[x]  " .. clean)
+                    table.insert(done,        "[x]  " .. clean)
+                elseif is_inprogress then
+                    table.insert(in_progress, "[/]  " .. clean)
                 else
-                    table.insert(pending, "[ ]  " .. clean)
+                    table.insert(pending,     "[ ]  " .. clean)
                 end
             end
         end
@@ -78,9 +82,10 @@ function Update()
     file:close()
 
     local lines = {}
-    for _, v in ipairs(pending) do table.insert(lines, v) end
+    for _, v in ipairs(in_progress) do table.insert(lines, v) end
+    for _, v in ipairs(pending)     do table.insert(lines, v) end
     if #done > 0 then
-        if #pending > 0 then table.insert(lines, "") end
+        if #pending > 0 or #in_progress > 0 then table.insert(lines, "") end
         for _, v in ipairs(done) do table.insert(lines, v) end
     end
 
